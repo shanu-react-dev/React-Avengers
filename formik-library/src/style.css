@@ -1,0 +1,75 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background: #000;
+  color: white;
+}
+#root {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.form-container {
+  height: 400px;
+  width: 350px;
+  /* background-color: grey; */
+}
+form {
+  height: 100%;
+  width: 100%;
+  background-color: #df8b9c78;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+}
+
+form > h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin-top: -60px;
+  margin-bottom: 20px;
+}
+form > label,
+input,
+button {
+  width: 80%;
+}
+
+form input {
+  padding: 10px 0 10px 30px;
+  /* border-radius: 7px; */
+  outline: none;
+  border: none;
+  background-color: transparent;
+  color: #efefef;
+  width: 100%;
+  font-size: 15px;
+  border-bottom: 2px solid gainsboro;
+}
+.icons {
+  width: 80%;
+  position: relative;
+  display: flex;
+}
+.iconset {
+  position: absolute;
+  bottom: 10px;
+  font-size: 18px;
+}
+
+form > button {
+  padding: 10px;
+  border-radius: 7px;
+  border: none;
+  background-color: black;
+  color: #fff;
+  font-size: 18px;
+  margin-top: 10px;
+}

@@ -1,0 +1,92 @@
+.container {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff6f7;
+}
+
+.form {
+  width: 350px;
+  padding: 2rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0px 6px 20px rgba(200, 60, 80, 0.15);
+  text-align: center;
+}
+
+.form h1 {
+  margin-bottom: 1.5rem;
+  color: #a31134;
+  font-weight: 600;
+}
+
+.form input {
+  width: 90%;
+  padding: 12px;
+  margin: 10px 0;
+  border-radius: 8px;
+  border: 1px solid #f0c2c8;
+  background: #fdecee;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+.form input:focus {
+  border-color: #d84a62;
+  background: #fbe3e6;
+  outline: none;
+}
+
+.form button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 12px;
+  background: #d7263d;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+.form button:hover {
+  background: #b81f33;
+  transform: translateY(-1px);
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 22px 0;
+}
+
+.divider div {
+  flex: 1;
+  height: 1px;
+  background: #f1c7cd;
+}
+
+.divider p {
+  margin: 0 10px;
+  color: #b75a65;
+}
+
+.socialIcons {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  font-size: 28px;
+  color: #d85a6a;
+}
+
+.socialIcons svg {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.socialIcons svg:hover {
+  color: #b71e33;
+}

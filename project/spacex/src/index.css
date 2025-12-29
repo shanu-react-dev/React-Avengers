@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.myFirstPage {
+  display: flex;
+  flex-direction: column;
+}
+.navbar {
+  height: 70px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  z-index: 1;
+}
+.navbar > .logo {
+  height: 100%;
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logo > svg {
+  height: 100%;
+  width: 80%;
+}
+.navbar > .navlist {
+  height: 100%;
+  width: 65%;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.navbar > .dropdown {
+  width: 20%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.dropdown > select {
+  height: 30px;
+  width: 80%;
+}
+
+.video {
+  height: 100vh;
+  width: 100%;
+  object-fit: cover;
+  z-index: -10;
+  top: 0;
+}
+.firstPageContent {
+  position: absolute;
+  bottom: 100px;
+  left: 70px;
+}
+
+.firstPageContent > span,
+h1,
+button {
+  color: #fff;
+  background-color: transparent;
+}
+.firstPageContent > span {
+  font-size: 20px;
+}
+.firstPageContent > h1 {
+  font-size: 60px;
+  width: 700px;
+}
+
+.firstPageContent > button {
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  border: 1px solid gainsboro;
+}
+.firstPageContent > button:hover {
+  color: black;
+  background-color: #fff;
+}
+
+.contentArea > .regularContent {
+  position: relative;
+}
+
+.contentArea > .regularContent > .regular {
+  position: absolute;
+  bottom: 200px;
+  left: 100px;
+  z-index: 10;
+}
+.regular > h1 {
+  width: 700px;
+  color: #fff;
+  font-size: 60px;
+}
+.regular > p {
+  color: #fff;
+  font-size: 18px;
+  margin: 20px 0;
+  width: 700px;
+}
+.regular > button {
+  color: #fff;
+  padding: 12px 25px;
+  border: 1px solid gainsboro;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  gap: 8px;
+}
+.regular > button:hover {
+  color: black;
+  background-color: #fff;
+}
