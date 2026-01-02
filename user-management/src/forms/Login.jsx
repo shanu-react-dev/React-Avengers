@@ -1,66 +1,70 @@
 import { useFormik } from "formik";
-import { loginSchema } from "../schemas/LoginSchema";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { loginSchema } from "../schemas/LoginSchema";
+import { toast, ToastContainer } from "react-toastify";
 
-let initialValues = {
-  email: "",
-  password: "",
-};
 const Login = () => {
-  let navigate = useNavigate();
-  let { handleBlur, handleSubmit, errors, handleChange, touched, values } =
-    useFormik({
-      initialValues: initialValues,
-      validationSchema: loginSchema,
-      onSubmit: async function (data) {
-        const res = await axios.get(
-          `http://localhost:5000/users?email=${data.email}`
-        );
-        console.log(res);
+  const navigate = useNavigate();
 
-        const allData = await axios.get(`http://localhost:5000/users`);
-        console.log(allData);
-        allData.data.map((ele, index) => {
-          if (ele.email === res.data[0].email) {
-            navigate("/");
-          } else {
-            console.log("Please provide valid credentials");
+  const { handleBlur, handleSubmit, errors, handleChange, touched, values } =
+    useFormik({
+      initialValues: { email: "", password: "" },
+      validationSchema: loginSchema,
+      onSubmit: async (formData) => {
+        try {
+          const res = await axios.get(
+            `http://localhost:5000/users?email=${formData.email}`
+          );
+
+          const user = res.data[0];
+
+          if (!user || user.password !== formData.password) {
+            toast.error("Invalid credentials");
+            return;
           }
-        });
+
+          localStorage.setItem("isLoggedIn", "true");
+          localStorage.setItem("userName", user.firstName);
+          localStorage.setItem("userImg", user.imgUrl);
+
+          navigate("/");
+        } catch (err) {
+          console.log("Login error");
+        }
       },
     });
+
   return (
     <div>
       <h1>Login Here</h1>
       <form onSubmit={handleSubmit}>
-        <label htmlFor="username">Enter your username</label>
+        <label>Enter your Email</label>
         <input
           type="email"
           name="email"
-          id="email"
           placeholder="example@gmail.com"
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.email}
         />
-        <p>{errors.email && touched.email ? `${errors.email}` : null}</p>
-        <label htmlFor="password">Enter your Password</label>
+        <p>{errors.email && touched.email ? errors.email : null}</p>
+
+        <label>Enter your Password</label>
         <input
           type="password"
           name="password"
-          id="password"
           placeholder="Enter your password"
           onChange={handleChange}
           onBlur={handleBlur}
           value={values.password}
         />
-        <p>
-          {errors.password && touched.password ? `${errors.password}` : null}
-        </p>
+        <p>{errors.password && touched.password ? errors.password : null}</p>
 
         <button type="submit">Login</button>
+        <Link to="/signup">Signup</Link>
       </form>
+      <ToastContainer />
     </div>
   );
 };

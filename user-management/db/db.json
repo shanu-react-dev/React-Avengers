@@ -1,14 +1,14 @@
 {
   "users": [
     {
-      "id": "1a86",
-      "firstName": "Shanu",
-      "lastName": "Sundari",
+      "id": "9912",
+      "firstName": "Sundari",
+      "lastName": "Singh",
       "email": "sundari@gmail.com",
-      "password": "1234567890",
+      "password": "12345678",
       "contact": "1234567890",
       "gender": "male",
-      "age": 20,
+      "age": 21,
       "imgUrl": "https://cdn.pixabay.com/photo/2019/12/24/05/37/muscle-4716025_1280.jpg"
     }
   ]
